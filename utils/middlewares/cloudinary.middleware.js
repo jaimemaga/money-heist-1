@@ -2,6 +2,7 @@ const cloudinary = require('cloudinary');
 const fs = require('fs');
 
 const uploadToCloudinary = async (req, res, next) => {
+    console.log(req.file)
     if (req.file) {
         try {
             const path = req.file.path;
