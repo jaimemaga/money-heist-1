@@ -18,7 +18,7 @@ const cloudinary = require('cloudinary');
 // const PORT = process.env.PORT || 3000;
 // const DB_URL = process.env.DB_URL;
 
-// const server = express();
+const server = express();
 
 // // server.set("secretKey", "nodeRestApi");
 
@@ -71,3 +71,5 @@ server.get('/api', (req, res) => {
 // server.listen(PORT, () => {
 //     console.log(`Server listening in http://localhost:${PORT}`);
 // });
+
+module.exports = server;
