@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
     },
     destination: (req, file, cb) => {
         console.log(__dirname, path.join(process.cwd(), '/tmp'))
-        cb(null, path.join(process.cwd(), '/tmp'));
+        cb(null, '/tmp/');
     }
 });
 
