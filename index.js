@@ -1,16 +1,16 @@
 require('dotenv').config();
 
 const express = require('express');
-const cors = require('cors');
-const charactersRouter = require('./routes/characters.routes.js');
-const locationsRouter = require('./routes/locations.routes.js');
-const connect = require('./utils/db-connect.js');
-const passport = require('passport');
-const userRouter = require('./routes/users.routes.js');
-const session = require('express-session');
-const MongoStore = require('connect-mongo');
-const path = require('path');
-const cloudinary = require('cloudinary');
+// const cors = require('cors');
+// const charactersRouter = require('./routes/characters.routes.js');
+// const locationsRouter = require('./routes/locations.routes.js');
+// const connect = require('./utils/db-connect.js');
+// const passport = require('passport');
+// const userRouter = require('./routes/users.routes.js');
+// const session = require('express-session');
+// const MongoStore = require('connect-mongo');
+// const path = require('path');
+// const cloudinary = require('cloudinary');
 
 
 // connect();
