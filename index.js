@@ -16,6 +16,7 @@ const cloudinary = require('cloudinary');
 connect();
 
 const PORT = process.env.PORT || 3000;
+console.log(process.env.PORT);
 const DB_URL = process.env.DB_URL;
 
 const server = express();
