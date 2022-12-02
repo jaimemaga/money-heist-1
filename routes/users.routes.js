@@ -1,6 +1,6 @@
 const express = require('express');
 const passport = require('passport');
-const User = require('./models/User');
+const User = require('./models/User.js');
 const getJWT = require('./utils/authentication/jsonwebtoken');
 const bcrypt = require('bcrypt');
 
