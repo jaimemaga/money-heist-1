@@ -2,11 +2,11 @@ require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
-const charactersRouter = require('../routes/characters.routes.js');
-const locationsRouter = require('../routes/locations.routes.js');
-const connect = require('../utils/db-connect.js');
+const charactersRouter = require('./routes/characters.routes.js');
+const locationsRouter = require('./routes/locations.routes.js');
+const connect = require('./utils/db-connect.js');
 const passport = require('passport');
-const userRouter = require('../routes/users.routes.js');
+const userRouter = require('./routes/users.routes.js');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const path = require('path');
@@ -34,7 +34,7 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_SECRET
 });
 
-require('../utils/authentication/passport.js');
+require('./utils/authentication/passport.js');
 
 server.use(session({
     secret: process.env.SESSION_SECRET_KEY || 'miSecreto',
@@ -50,9 +50,13 @@ server.use(session({
 server.use(passport.initialize());
 server.use(passport.session());
 
-server.use('/user', userRouter);
-server.use('/characters', charactersRouter);
-server.use('/locations', locationsRouter);
+server.get('/api', (req, res) => {
+    res.json("Bienvenido a mi API REST");
+});
+
+server.use('/api/user', userRouter);
+server.use('/api/characters', charactersRouter);
+server.use('/api/locations', locationsRouter);
 
 server.use('*', (req, res, next) => {
     const err = new Error('La ruta no existe');
