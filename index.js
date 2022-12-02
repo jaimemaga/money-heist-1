@@ -16,7 +16,6 @@ const cloudinary = require('cloudinary');
 connect();
 
 const PORT = process.env.PORT || 3000;
-console.log(process.env.PORT);
 const DB_URL = process.env.DB_URL;
 
 const server = express();
@@ -51,13 +50,13 @@ server.use(session({
 server.use(passport.initialize());
 server.use(passport.session());
 
-server.get('/api', (req, res) => {
+server.get('/', (req, res) => {
     res.json("Bienvenido a mi API REST");
 });
 
-server.use('/api/user', userRouter);
-server.use('/api/characters', charactersRouter);
-server.use('/api/locations', locationsRouter);
+server.use('/user', userRouter);
+server.use('/characters', charactersRouter);
+server.use('/locations', locationsRouter);
 
 server.use('*', (req, res, next) => {
     const err = new Error('La ruta no existe');
