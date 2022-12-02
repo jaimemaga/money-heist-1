@@ -54,9 +54,9 @@ server.get('/', (req, res) => {
     res.json("Bienvenido a mi API REST");
 });
 
-server.use('/api/user', userRouter);
-server.use('/api/characters', charactersRouter);
-server.use('/api/locations', locationsRouter);
+server.use('/user', userRouter);
+server.use('/characters', charactersRouter);
+server.use('/locations', locationsRouter);
 
 server.use('*', (req, res, next) => {
     const err = new Error('La ruta no existe');
